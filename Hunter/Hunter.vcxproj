@@ -173,7 +173,7 @@
     <ClInclude Include="include\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\Renderer.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="src\HunterApp.cpp" />
     <ClCompile Include="src\OpenGL\OpenGLImplementation.cpp" />
     <ClCompile Include="src\OpenGL\OpenGLShader.cpp" />

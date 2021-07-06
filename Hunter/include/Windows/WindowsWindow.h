@@ -15,6 +15,8 @@ namespace Hunter {
 		void DeleteWindow() override;
 		void SwapBuffers() override;
 		void PollForEvents() override;
+		int GetWidth() const override;
+		int GetHeight() const override;
 
 	private:
 		GLFWwindow* window{ nullptr };

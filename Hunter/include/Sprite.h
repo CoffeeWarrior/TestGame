@@ -11,6 +11,9 @@ namespace Hunter {
 		
 		int getWidth() const;
 		int getHeight() const;
+
+		const unsigned char* GetImagePointer() const;
+
 		~Sprite();
 
 	private:

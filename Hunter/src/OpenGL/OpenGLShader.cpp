@@ -33,6 +33,11 @@ namespace Hunter {
 			return false; //our loading failed
 		}
 
+		if (mShaderProgram) { //if there is an existing shader, we should delete it
+			glDeleteProgram(mShaderProgram);
+		}
+
+		mShaderProgram = glCreateProgram();
 		glAttachShader(mShaderProgram, vShader);
 		glAttachShader(mShaderProgram, fShader);
 		glLinkProgram(mShaderProgram);

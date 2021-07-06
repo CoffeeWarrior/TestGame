@@ -11,7 +11,7 @@ namespace Hunter
 		virtual void Use() = 0;
 
 		virtual void SetVec2Int(const std::string& uniformName, int val1, int val2) = 0;
-		virtual ~Shader() { }; //this is done to remove linker error - https://www.geeksforgeeks.org/pure-virtual-destructor-c/
+		virtual ~Shader() = 0 { };  //this is done to remove linker error - https://www.geeksforgeeks.org/pure-virtual-destructor-c/
 	};
 
 

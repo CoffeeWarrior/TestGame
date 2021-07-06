@@ -90,7 +90,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_MYDEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_MYDEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -108,7 +108,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
@@ -126,7 +126,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_MYDEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_MYDEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
@@ -144,7 +144,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
@@ -162,15 +162,20 @@
     <ClInclude Include="include\Hunter.h" />
     <ClInclude Include="include\HunterApp.h" />
     <ClInclude Include="include\HunterCentral.h" />
+    <ClInclude Include="include\OpenGL\OpenGLImplementation.h" />
     <ClInclude Include="include\OpenGL\OpenGLShader.h" />
     <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\Renderer.h" />
+    <ClInclude Include="include\RendererImplementation.h" />
     <ClInclude Include="include\Shader.h" />
     <ClInclude Include="include\Sprite.h" />
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="include\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\Renderer.cpp" />
     <ClCompile Include="src\HunterApp.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLImplementation.cpp" />
     <ClCompile Include="src\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\Sprite.cpp" />

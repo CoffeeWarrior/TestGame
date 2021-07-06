@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "..\include\Event.h"
+#include "Event.h"
 
 namespace Hunter {
 	EventType Event::GetEventType() const

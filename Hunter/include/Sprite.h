@@ -16,6 +16,10 @@ namespace Hunter {
 
 		~Sprite();
 
+		Sprite(const Sprite& other) = delete;
+		Sprite(Sprite&& other) = delete;
+		Sprite& operator= (const Sprite& other) = delete;
+		Sprite& operator= (Sprite&& other) = delete;
 	private:
 		unsigned char* mImage{ nullptr };
 		int mWidth{ 0 }, mHeight{ 0 }, mNumChannels{ 0 };

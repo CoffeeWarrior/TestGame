@@ -3,26 +3,27 @@
 #include "Windows/WindowsWindow.h"
 #include "Renderer.h"
 #include "Sprite.h"
+#include "HunterKeys.h"
 
 namespace Hunter {
 	HunterApp* HunterApp::GetApplication() {
 		return instance;
 	}
 
-	void HunterApp::Init() {
-		if (instance == nullptr) { 
-			instance = new HunterApp;
-		}
-	}
-
 	HunterApp::HunterApp() {
 		assert(instance == nullptr);
 		
+		instance = this;
+#ifdef _HUNTER_WINDOWS
 		appWindow = new WindowsWindow;
-		bool success{ appWindow->CreateWindow(800, 600) };
+#else
+		#Only_windows_supported_sorry
+#endif
+
+		bool success{ appWindow->CreateWindow(800, 800) };
 		assert(success);
 
-		
+		appWindow->SetKeyPressedCallback([this](KeyPressedEvent& event) {OnKeyPressed(event); });
 	}
 
 	void HunterApp::RunGame() {
@@ -30,20 +31,32 @@ namespace Hunter {
 		
 		Renderer::Init();
 		
-		Sprite test1{"../Hunter/assets/sprites/Sprite1.png"};
-		Sprite test2{ "../Hunter/assets/sprites/Gooby.png" };
-
+		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
+		
 		while (true) { // will add better condition later
-			Renderer::Draw(test1, 100, 100, test1.getWidth(), test1.getHeight());
-			Renderer::Draw(test2, 100, 100, test2.getWidth(), test2.getHeight());
+
+			Renderer::ClearFrame();
+
+			OnUpdate();
+
+			std::this_thread::sleep_until(mNextFrameTime);
+			
 			appWindow->SwapBuffers();
 			appWindow->PollForEvents();
+
+			mNextFrameTime += mFrameDuration;
 		}
 	}
 
 	HunterApp::~HunterApp() {
 		appWindow->DeleteWindow();
 	}
+
+	void HunterApp::OnUpdate()
+	{
+		//left empty because hunter app will not do anything. It is up to game programmer to create OnUpdate function in inherted game class
+	}
+
 	int HunterApp::GetWindowWidth()
 	{
 		return instance->appWindow->GetWidth();
@@ -51,5 +64,9 @@ namespace Hunter {
 	int HunterApp::GetWindowHeight()
 	{
 		return instance->appWindow->GetWidth();
+	}
+	void HunterApp::OnKeyPressed(KeyPressedEvent& event)
+	{
+		HLOG(event.GetKeyCode());
 	}
 }

@@ -53,9 +53,18 @@ namespace Hunter {
 
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
+		glDeleteTextures(1, &picture);
+		glDeleteBuffers(1, &VBO);
+		glDeleteVertexArrays(1, &VAO);
+
 	}
 
 	OpenGLImplementation::~OpenGLImplementation() {
 
+	}
+	void OpenGLImplementation::ClearFrame()
+	{
+		glClearColor(0.0, 0.0, 0.0, 1.0);
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 }

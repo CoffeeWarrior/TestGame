@@ -1,9 +1,11 @@
 #pragma once
 #include "Event.h"
+#include "HunterCentral.h"
 
 namespace Hunter {
-	class KeyPressedEvent : public Event {
+	class HUNTER_API KeyPressedEvent : public Event {
 	public:
+		KeyPressedEvent(int key);
 		int GetKeyCode() const;
 
 	private:
@@ -12,7 +14,9 @@ namespace Hunter {
 	
 	class KeyReleasedEvent : public Event {
 	public:
+		KeyReleasedEvent(int key);
 		int GetKeyCode() const;
+
 
 	private:
 		int mKeyCode{ -1 };

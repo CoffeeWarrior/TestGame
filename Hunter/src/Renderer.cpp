@@ -21,6 +21,11 @@ namespace Hunter {
 		}
 	}
 
+	void Renderer::ClearFrame()
+	{
+		instance->mDrawingEngine->ClearFrame();
+	}
+
 
 	Renderer::Renderer()
 	{

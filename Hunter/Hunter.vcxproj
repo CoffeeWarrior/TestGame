@@ -90,16 +90,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_MYDEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_HUNTER_WINDOWS;_MYDEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,10 +110,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_HUNTER_WINDOWS;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -120,22 +122,26 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_MYDEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_HUNTER_WINDOWS;_MYDEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,10 +150,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_HUNTER_DLL_BUILD;_HUNTER_OPENGL;_HUNTER_WINDOWS;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\stb_image;C:\Users\lionl\source\repos\TestGame\Hunter\include\Windows;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -156,6 +162,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -163,6 +171,7 @@
     <ClInclude Include="include\Hunter.h" />
     <ClInclude Include="include\HunterApp.h" />
     <ClInclude Include="include\HunterCentral.h" />
+    <ClInclude Include="include\HunterKeys.h" />
     <ClInclude Include="include\KeyboardEvents.h" />
     <ClInclude Include="include\OpenGL\OpenGLImplementation.h" />
     <ClInclude Include="include\OpenGL\OpenGLShader.h" />

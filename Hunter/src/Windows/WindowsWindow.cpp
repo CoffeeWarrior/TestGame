@@ -15,6 +15,19 @@ namespace Hunter{
 
 		glfwSwapInterval(1);
 
+		glfwSetWindowUserPointer(window, &mCallbacks);
+
+		glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+			if (action == GLFW_PRESS || action == GLFW_REPEAT) {
+				KeyPressedEvent event{ key };
+
+				Callbacks* callbacks{ (Callbacks*)glfwGetWindowUserPointer(window) };
+
+				callbacks->KeyPressedCallback(event);
+			}
+				
+		});
+
 		return true;
 	}
 
@@ -22,6 +35,7 @@ namespace Hunter{
 		glfwDestroyWindow(window);
 		glfwTerminate();
 	}
+
 
 	void WindowsWindow::SwapBuffers() {
 		glfwSwapBuffers(window);
@@ -45,5 +59,9 @@ namespace Hunter{
 		glfwGetWindowSize(window, &width, &height);
 
 		return height;
+	}
+	void WindowsWindow::SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> newCallback)
+	{
+		mCallbacks.KeyPressedCallback = newCallback;
 	}
 }

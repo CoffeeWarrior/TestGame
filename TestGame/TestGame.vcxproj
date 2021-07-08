@@ -93,11 +93,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\TestGame\include;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,13 +111,15 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\TestGame\include;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,11 +129,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\TestGame\include;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,22 +147,30 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\lionl\source\repos\TestGame\TestGame\include;C:\Users\lionl\source\repos\TestGame\glad\include;C:\Users\lionl\source\repos\TestGame\GLFW\include;C:\Users\lionl\source\repos\TestGame\Hunter\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameApp.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hunter\Hunter.vcxproj">
       <Project>{bd048b01-78c0-4edb-98dd-1912ce60c5a0}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\GameApp.h" />
+    <ClInclude Include="include\Unit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -20,7 +20,7 @@ namespace Hunter {
 		#Only_windows_supported_sorry
 #endif
 
-		bool success{ appWindow->CreateWindow(800, 800) };
+		bool success{ appWindow->CreateWindow(1000, 1000) };
 		assert(success);
 
 		appWindow->SetKeyPressedCallback([this](KeyPressedEvent& event) {OnKeyPressed(event); });

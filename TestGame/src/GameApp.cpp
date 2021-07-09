@@ -1,12 +1,36 @@
 #include "..\include\GameApp.h"
+#include "Enemy.h"
 
-GameApp::GameApp(): mBuddy("assets/Buddy.png", 10), mBuddyAction(Action::None)
+#define BUDDY_SPEED 10
+#define BULLY_SPEED 6
+
+GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Action::None), timer(0)
 {
+	mBuddy.SetXCoord(100);
+	mBuddy.SetYCoord(100);
 	
 }
 
 void GameApp::OnUpdate()
 {
+	for (auto & enemy : mEnemies) {
+		enemy.MoveXBySpeed();
+		enemy.Draw();
+	}
+
+	/*************************************************************************************************************/
+	/********************************************      TIMER CODE ************************************************/
+	/*************************************************************************************************************/
+	if (timer % 30 == 0) {
+		mEnemies.emplace_back("assets/Bully.png", BULLY_SPEED);
+	}
+	timer++;
+
+
+	/*************************************************************************************************************/
+	/********************************************      BUDDY CODE ************************************************/
+	/*************************************************************************************************************/
+
 	if (mBuddyAction == Action::LeftMove) {
 		if(mBuddy.GetXCoord() - mBuddy.Speed() >= 0){
 			mBuddy.MoveLeft();
@@ -17,8 +41,7 @@ void GameApp::OnUpdate()
 			mBuddy.MoveRight();
 		}
 		
-	}/*
-	up/down controls -- reenable if interested in up/down motion
+	} 
 	else if (mBuddyAction == Action::DownMove) {
 		if (mBuddy.GetYCoord() - mBuddy.Speed() >= 0) {
 			mBuddy.MoveDown();
@@ -29,11 +52,8 @@ void GameApp::OnUpdate()
 			mBuddy.MoveUp();
 		}
 	}	
-	*/
-	
-
 	mBuddy.Draw();
-	mBuddyAction = Action::None;
+	// mBuddyAction = Action::None; //we can have this line, however it feels smoother when character continues moving in a direction
 }
 
 void GameApp::OnKeyPressed(Hunter::KeyPressedEvent& event)

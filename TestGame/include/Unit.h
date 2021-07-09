@@ -16,7 +16,7 @@ public:
 	int  GetWidth()  const;
 	int  GetHeight()  const;
 
-	int Speed() const;
+	int & Speed();
 
 
 	//update coords
@@ -28,14 +28,17 @@ public:
 	void MoveRight();
 	void MoveUp();
 	void MoveDown();
-
+	void MoveXBySpeed();
 
 	void Draw() const;
 
 	//write overlaps with & helper
 	bool OverlapsWith(const Unit& other) const;
 	bool OverlapsWithHelper(const int otherX, const int otherY) const;
+protected:
+	
 private:
-	Hunter::Sprite mImage;
 	int mXcoord, mYcoord, mSpeed;
+	Hunter::Sprite mImage;
+	
 };

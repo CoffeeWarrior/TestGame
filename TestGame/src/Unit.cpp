@@ -35,7 +35,7 @@ int Unit::GetHeight() const
 	return mImage.getHeight();
 }
 
-int Unit::Speed() const
+int & Unit::Speed() 
 {
 	return mSpeed;
 }
@@ -69,6 +69,13 @@ void Unit::MoveDown()
 {
 	UpdateYCoord(-mSpeed);
 }
+
+
+void Unit::MoveXBySpeed()
+{
+	mXcoord += mSpeed;
+}
+
 
 
 void Unit::Draw() const

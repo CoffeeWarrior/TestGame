@@ -3,9 +3,9 @@
 #include "Enemy.h"
 
 #define BUDDY_SPEED 10
-#define BULLY_SPEED 11
+#define BULLY_SPEED 7
 
-GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Action::None), timer(0), mGameOverImage{ "assets/GameOver.png" }, mGameEnd{false}
+GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Action::RightMove), timer(0), mGameOverImage{ "assets/GameOver.png" }, mGameEnd{false}
 {
 	mBuddy.SetXCoord(100);
 	mBuddy.SetYCoord(100);
@@ -28,12 +28,11 @@ void GameApp::OnUpdate()
 			mEnemies.pop_front();
 		}
 	}
-
 	/*************************************************************************************************************/
 	/********************************************      TIMER CODE ************************************************/
 	/*************************************************************************************************************/
 	if (timer % 30 == 0) {
-		mEnemies.emplace_back("assets/Bully.png", BULLY_SPEED);
+		mEnemies.emplace_back("assets/Bully.png",BULLY_SPEED);
 	}
 	timer++;
 
@@ -41,6 +40,12 @@ void GameApp::OnUpdate()
 	/*************************************************************************************************************/
 	/********************************************      BUDDY CODE ************************************************/
 	/*************************************************************************************************************/
+	if (timer % 7 == 0) {
+		if (mBuddy.Speed() < BUDDY_SPEED  + 7) {
+			mBuddy.Speed() += 1;
+		}
+		
+	}
 
 	if (mBuddyAction == Action::LeftMove) {
 		if(mBuddy.GetXCoord() - mBuddy.Speed() >= 0){
@@ -81,4 +86,6 @@ void GameApp::OnKeyPressed(Hunter::KeyPressedEvent& event)
 	else if (event.GetKeyCode() == HUNTER_KEY_DOWN) {
 		mBuddyAction = Action::DownMove;
 	}
+
+	mBuddy.Speed() = BUDDY_SPEED;
 }

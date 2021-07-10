@@ -14,7 +14,9 @@ public:
 private:
 	Unit mBuddy;
 	std::deque<Enemy> mEnemies;
+	Hunter::Sprite mGameOverImage;
 	long long timer;
+	bool mGameEnd;
 
 	enum class Action
 	{

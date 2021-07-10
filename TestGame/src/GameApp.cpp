@@ -1,10 +1,11 @@
 #include "..\include\GameApp.h"
+#include "Hunter.h"
 #include "Enemy.h"
 
 #define BUDDY_SPEED 10
-#define BULLY_SPEED 6
+#define BULLY_SPEED 11
 
-GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Action::None), timer(0)
+GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Action::None), timer(0), mGameOverImage{ "assets/GameOver.png" }, mGameEnd{false}
 {
 	mBuddy.SetXCoord(100);
 	mBuddy.SetYCoord(100);
@@ -13,9 +14,19 @@ GameApp::GameApp() : mBuddy("assets/Buddy.png", BUDDY_SPEED), mBuddyAction(Actio
 
 void GameApp::OnUpdate()
 {
+	if (mGameEnd) {
+		Hunter::Renderer::Draw(mGameOverImage, (GameApp::GetWindowWidth() - mGameOverImage.getWidth())/2, (GameApp::GetWindowHeight() - mGameOverImage.getHeight()) / 2, mGameOverImage.getWidth(), mGameOverImage.getHeight());
+		return;
+	}
 	for (auto & enemy : mEnemies) {
+		if (mBuddy.OverlapsWith(enemy)) {
+			mGameEnd = true;
+		}
 		enemy.MoveXBySpeed();
 		enemy.Draw();
+		if (enemy.offScreen()) {
+			mEnemies.pop_front();
+		}
 	}
 
 	/*************************************************************************************************************/

@@ -71,6 +71,9 @@ void Unit::MoveDown()
 }
 
 
+
+
+
 void Unit::MoveXBySpeed()
 {
 	mXcoord += mSpeed;
@@ -84,18 +87,19 @@ void Unit::Draw() const
 }
 
 bool Unit::OverlapsWith(const Unit& other) const
-{
-	//perform checks for each image of our sprite
+{	
+	////perform checks for each image of our sprite
 	return OverlapsWithHelper(other.mXcoord, other.mYcoord) ||
 		OverlapsWithHelper(other.mXcoord + other.GetWidth(), other.mYcoord) ||
 		OverlapsWithHelper(other.mXcoord, other.mYcoord + other.GetHeight()) ||
-		OverlapsWithHelper(other.mXcoord + other.GetWidth(), other.GetYCoord() + other.GetHeight());
+		OverlapsWithHelper(other.mXcoord + other.GetWidth(), other.GetYCoord() + other.GetHeight()) ;
 }
 
 bool Unit::OverlapsWithHelper(const int otherX, const int otherY) const
 {
-	if (otherX > mXcoord && otherX < mXcoord + this->GetWidth()) { //check if x is between our x's on our sprite
-		if (otherY > mYcoord && otherY < mYcoord + this->GetHeight()) { //check if y is between our y's on our sprite
+	if (otherX > mXcoord && otherX < mXcoord + mImage.getWidth()) { //check if x is between our x's on our sprite
+		if (otherY > mYcoord && otherY < mYcoord + mImage.getHeight()) { //check if y is between our y's on our sprite
+			HLOG("What");
 			return true;
 		}
 	}

@@ -12,7 +12,7 @@ namespace Hunter {
 		int mKeyCode{ -1 };
 	};
 	
-	class KeyReleasedEvent : public Event {
+	class HUNTER_API KeyReleasedEvent : public Event {
 	public:
 		KeyReleasedEvent(int key);
 		int GetKeyCode() const;
